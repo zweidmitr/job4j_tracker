@@ -41,8 +41,10 @@ public class FunctionInterfaceUsage {
         System.out.println("--------------------------");
 
         UnaryOperator<StringBuilder> builder = b -> b.reverse();
-        System.out.println("Строка после реверса: " + builder.apply(new StringBuilder("String for test")));
-        System.out.println("Строка после реверса: " + builder.apply(new StringBuilder("tset rof gnirtS")));
+        System.out.println("Строка после реверса: " + builder.apply(
+                new StringBuilder("String for test")));
+        System.out.println("Строка после реверса: " + builder.apply(
+                new StringBuilder("tset rof gnirtS")));
         System.out.println("--------------------------");
 
         BinaryOperator<StringBuilder> sb = (b1, b2) -> b1.append(" ").append(b2);

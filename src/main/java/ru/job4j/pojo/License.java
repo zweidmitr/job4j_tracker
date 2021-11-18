@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.Objects;
 
 public class License {
+    private String code;
+    private Date created;
     private String owner;
     private String model;
 
@@ -26,9 +28,6 @@ public class License {
     public int hashCode() {
         return Objects.hash(owner, model, code, created);
     }
-
-    private String code;
-    private Date created;
 
     public String getOwner() {
         return owner;

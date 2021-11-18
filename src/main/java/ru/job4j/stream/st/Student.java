@@ -55,7 +55,8 @@ public class Student {
             return false;
         }
         Student student = (Student) o;
-        return Objects.equals(name, student.name) && Objects.equals(account, student.account) && Objects.equals(group, student.group);
+        return Objects.equals(name, student.name) && Objects.equals(account, student.account)
+                && Objects.equals(group, student.group);
     }
 
     @Override

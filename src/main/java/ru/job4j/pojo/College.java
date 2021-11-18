@@ -10,6 +10,10 @@ public class College {
         studentik.setGroup("ЦветочныйГород");
         studentik.setDateP(date);
 
-        System.out.println("Студент: " + studentik.getFio() + " from:  " + studentik.getGroup() + ", проснулся  " + studentik.getDateP());
+        System.out.println("Студент: "
+                + studentik.getFio()
+                + " from:  "
+                + studentik.getGroup()
+                + ", проснулся  " + studentik.getDateP());
     }
 }

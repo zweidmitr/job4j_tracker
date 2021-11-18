@@ -12,7 +12,8 @@ import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.is;
 
 public class StartUITest {
-    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
+    private static final DateTimeFormatter FORMATTER
+            = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
 
     @Test
     public void whenInvalidExit() {
@@ -45,7 +46,8 @@ public class StartUITest {
         List<UserAction> actions = new ArrayList<>();
         actions.add(new ExitProgramAction());
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is("Menu: " + System.lineSeparator() + "0. Exit program" + System.lineSeparator()));
+        assertThat(out.toString(), is("Menu: " + System.lineSeparator() + "0. Exit program"
+                + System.lineSeparator()));
     }
 
     @Test

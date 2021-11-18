@@ -2,7 +2,7 @@ package ru.job4j.lambda;
 
 public class Attachment {
     private String name;
-    int size;
+    private int size;
 
     public Attachment(String name, int size) {
         this.name = name;

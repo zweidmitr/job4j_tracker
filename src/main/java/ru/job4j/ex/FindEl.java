@@ -16,7 +16,8 @@ public class FindEl {
     }
 
     public static void main(String[] args) {
-        String[] array = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+        String[] array = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
+                "Saturday", "Sunday"};
         int index = 0;
         try {
             index = indexOf(array, "Weekend+");

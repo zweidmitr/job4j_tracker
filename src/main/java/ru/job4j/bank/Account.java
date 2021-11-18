@@ -13,6 +13,11 @@ public class Account {
     private String requisite;
     private double balance;
 
+    public Account(String requisite, double balance) {
+        this.requisite = requisite;
+        this.balance = balance;
+    }
+
     public String getRequisite() {
         return requisite;
     }
@@ -26,11 +31,6 @@ public class Account {
     }
 
     public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
-    public Account(String requisite, double balance) {
-        this.requisite = requisite;
         this.balance = balance;
     }
 
