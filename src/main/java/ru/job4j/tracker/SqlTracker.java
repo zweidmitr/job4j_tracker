@@ -69,7 +69,7 @@ public class SqlTracker implements Store {
             ps.setString(1, item.getName());
             ps.setTimestamp(2, Timestamp.valueOf(item.getTime()));
             ps.setInt(3, id);
-            result = ps.executeUpdate() > 1;
+            result = ps.executeUpdate() > 0;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -82,7 +82,7 @@ public class SqlTracker implements Store {
         try (PreparedStatement ps =
                      cn.prepareStatement("delete from item where id = ?")) {
             ps.setInt(1, id);
-            result = ps.executeUpdate() > 1;
+            result = ps.executeUpdate() > 0;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -129,7 +129,7 @@ public class SqlTracker implements Store {
                      cn.prepareStatement("select * from item where id = ?")) {
             ps.setInt(1, id);
             try (ResultSet resultSet = ps.executeQuery()) {
-                while (resultSet.next()) {
+                if (resultSet.next()) {
                     item = getItemFromResultSet(resultSet);
                 }
             }
