@@ -46,7 +46,7 @@ public class SqlTrackerTest {
 
     @After
     public void wipeTable() throws SQLException {
-        try (PreparedStatement statement = connection.prepareStatement("delete from item")) {
+        try (PreparedStatement statement = connection.prepareStatement("delete from items")) {
             statement.execute();
         }
     }
@@ -83,14 +83,15 @@ public class SqlTrackerTest {
     @Test
     public void whenFindAll() {
         SqlTracker tracker = new SqlTracker(connection);
-        tracker.add(new Item("first"));
-        tracker.add(new Item("second"));
-        tracker.add(new Item("third"));
+        Item one = new Item("first");
+        Item two = new Item("second");
+        Item three = new Item("third");
+        tracker.add(one);
+        tracker.add(two);
+        tracker.add(three);
         List<Item> result = tracker.findAll();
-        Iterator<Item> iter = result.iterator();
-        assertThat(iter.next().getName(), is("first"));
-        assertThat(iter.next().getName(), is("second"));
-        assertThat(iter.next().getName(), is("third"));
+        List<Item> resultik = List.of(one, two, three);
+        assertThat(result, is(resultik));
     }
 
     @Test
