@@ -90,19 +90,19 @@ public class SqlTrackerTest {
         tracker.add(two);
         tracker.add(three);
         List<Item> result = tracker.findAll();
-        List<Item> resultik = List.of(one, two, three);
-        assertThat(result, is(resultik));
+        assertThat(result, is(List.of(one, two, three)));
     }
 
     @Test
     public void whenFindByName() {
         SqlTracker tracker = new SqlTracker(connection);
-        tracker.add(new Item("first"));
-        tracker.add(new Item("second"));
-        tracker.add(new Item("third"));
+        Item one = new Item("first");
+        Item two = new Item("second");
+        Item three = new Item("third");
+        tracker.add(one);
+        tracker.add(two);
+        tracker.add(three);
         List<Item> result = tracker.findByName("second");
-        Iterator<Item> iter = result.iterator();
-        assertThat(iter.next().getName(), is("second"));
-        assertFalse(iter.hasNext());
+        assertThat(result, is(List.of(two)));
     }
 }
