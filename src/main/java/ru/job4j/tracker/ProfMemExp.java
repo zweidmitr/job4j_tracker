@@ -22,7 +22,7 @@ public class ProfMemExp {
         }
     }
 
-    private static void delete (MemTracker tracker) {
+    private static void delete(MemTracker tracker) {
         for (int i = 0; i < 1_000_000; i++) {
             tracker.delete(i);
             System.out.println(i);
