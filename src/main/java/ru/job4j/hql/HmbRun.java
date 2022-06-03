@@ -26,12 +26,12 @@ public class HmbRun {
             session.save(two);
             session.save(three);
 
-            // SELECT
+             SELECT
             Query query = session.createQuery("from Student s where s.id = :fId");
             query.setParameter("fId", 1);
             System.out.println(query.getSingleResult());
 
-            // UPDATE
+             UPDATE
             session.createQuery(
             "update Student s set s.age = : newAge, s.city = :newCity where s.id = :fId")
                     .setParameter("newCity", "London")
@@ -39,12 +39,12 @@ public class HmbRun {
                     .setParameter("fId", 1)
                     .executeUpdate();
 
-            // DELETE
+             DELETE
             session.createQuery("delete from Student where  id = :fId")
                     .setParameter("fId", 3)
                     .executeUpdate();
 
-            // INSERT
+             INSERT
             session.createQuery("insert into Student (name,age,city) "
                     + "select concat(s.name, 'NEW'),s.age + 5, s.city "
                     + "from  Student s where id= :fId")
